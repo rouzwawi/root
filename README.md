@@ -4,6 +4,6 @@
 <parent>
   <groupId>io.rouz</groupId>
   <artifactId>root</artifactId>
-  <version>$VERSION</version>
+  <version>1</version>
 </parent>
 ```
