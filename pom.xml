@@ -53,6 +53,12 @@
   </distributionManagement>
 
   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -151,6 +157,42 @@
               <include>**/*IT.java</include>
             </includes>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>1.9</version>
+          <configuration>
+            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+            <licenseName>apache_v2</licenseName>
+            <organizationName>rouz.io</organizationName>
+            <inceptionYear>2016</inceptionYear>
+            <encoding>UTF-8</encoding>
+            <failOnMissingHeader>true</failOnMissingHeader>
+            <failOnNotUptodateHeader>true</failOnNotUptodateHeader>
+            <processStartTag>-\-\-</processStartTag>
+            <processEndTag>-/-/-</processEndTag>
+            <sectionDelimiter>--</sectionDelimiter>
+            <emptyLineAfterHeader>true</emptyLineAfterHeader>
+            <roots>
+              <root>src/main/java</root>
+              <root>src/main/kotlin</root>
+              <root>src/test/java</root>
+              <root>src/test/kotlin</root>
+            </roots>
+            <extraExtensions>
+              <kt>java</kt>
+            </extraExtensions>
+          </configuration>
+          <executions>
+            <execution>
+              <id>check-file-header</id>
+              <goals>
+                <goal>check-file-header</goal>
+              </goals>
+              <phase>process-sources</phase>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
