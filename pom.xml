@@ -13,10 +13,6 @@
     Root project for consistent Maven conventions.
   </description>
 
-  <prerequisites>
-    <maven>3.2.2</maven>
-  </prerequisites>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -32,7 +28,7 @@
   <developers>
     <developer>
       <id>rouzwawi</id>
-      <email>rouzwawi@gmail.com</email>
+      <email>me@rouz.io</email>
       <name>Rouzbeh Delavari</name>
     </developer>
   </developers>
@@ -50,6 +46,10 @@
       <id>ossrh</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
   </distributionManagement>
 
   <build>
